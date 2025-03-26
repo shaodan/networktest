@@ -127,8 +127,8 @@ func RunClient(address string, count int, interval int, maxRetries int, retryInt
 		rtt_f := float64(rtt) / 1e6
 		offset_f := float64(offset) / 1e6
 
-		fmt.Printf("Round-trip time: %.3f ms, Offset: %.3f ms\n",
-			rtt_f, offset_f)
+		// fmt.Printf("Round-trip time: %.3f ms, Offset: %.3f ms\n",
+		// 	rtt_f, offset_f)
 
 		SendLatency(rtt_f, offset_f)
 		time.Sleep(time.Duration(interval) * time.Millisecond)
