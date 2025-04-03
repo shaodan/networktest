@@ -19,9 +19,10 @@ func InitStatsD(address, env, service string) {
 	}
 }
 
-func SendLatency(rtt, offset float64) {
+func SendLatency(rtt float64) {
 	// gauge只会保留最新的一个数据
 	// statsd_cli.Gauge("quant.ob.delay_gauge", float64(latency), nil, 1)
+	// fmt.Println(rtt)
 	statsd_cli.Histogram("blofin_lp.test.rtt", rtt, nil, 1)
-	statsd_cli.Histogram("blofin_lp.test.offset", offset, nil, 1)
+	// statsd_cli.Histogram("blofin_lp.test.offset", offset, nil, 1)
 }
